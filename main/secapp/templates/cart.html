@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Pets - Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pawsome Pets</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    
+                </ul>
+                <div class="d-flex">
+                    <a href="{% url 'cart' %}" class="btn btn-primary" type="button">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-secondary">3</span>
+                        <span class="visually-hidden">items in cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">Your Shopping Cart</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Cart Items</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://pedigreeclub.ph/cdn/shop/files/PEDIGREE_DogFoodWetAdultSimmeredBeefLoafFlavourwithVegetables130g10pcs_2pcsWetAdultBeef130g.webp?v=1714112294&width=823" alt="Dog Food" class="me-2" style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span>PEDIGREE® Dog Food Wet Adult Simmered Beef Loaf Flavour with Vegetables 10pcs + FREE 2pcs Wet Adult Beef 130g</span>
+                                            </div>
+                                        </td>
+                                        <td>₱390</td>
+                                        <td>
+                                            <div class="input-group" style="width: 120px;">
+                                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                                <input type="text" class="form-control text-center" value="1">
+                                                <button class="btn btn-outline-secondary" type="button">+</button>
+                                            </div>
+                                        </td>
+                                        <td>₱390</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://pedigreeclub.ph/cdn/shop/files/10274439_PedigreeFurDryFoodAdultBeef_Vegetables20kg_1__FOP.jpg?v=1710857725" alt="Cat Toy" class="me-2" style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span>PEDIGREE® Mini Dog Food Dry Adult Chicken Liver & Vegetable</span>
+                                            </div>
+                                        </td>
+                                        <td>₱305</td>
+                                        <td>
+                                            <div class="input-group" style="width: 120px;">
+                                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                                <input type="text" class="form-control text-center" value="2">
+                                                <button class="btn btn-outline-secondary" type="button">+</button>
+                                            </div>
+                                        </td>
+                                        <td>₱610</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://pedigreeclub.ph/cdn/shop/products/PEDIGREEDentaStixBokrosOriginalLarge270g_1__5998749109113_FOP.jpg?v=1663064310&width=823" alt="Fish Tank" class="me-2" style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span>PEDIGREE® DENTASTIX™ Dog Treat Adult Large</span>
+                                            </div>
+                                        </td>
+                                        <td>₱99</td>
+                                        <td>
+                                            <div class="input-group" style="width: 120px;">
+                                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                                <input type="text" class="form-control text-center" value="1">
+                                                <button class="btn btn-outline-secondary" type="button">+</button>
+                                            </div>
+                                        </td>
+                                        <td>₱99</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a href="shop.html" class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                    </a>
+                    <button class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-clockwise me-2"></i>Update Cart
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order Summary</h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal</span>
+                            <span>₱100.96</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Shipping</span>
+                            <span>₱5.99</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tax</span>
+                            <span>₱8.08</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4">
+                            <strong>Total</strong>
+                            <strong>₱115.03</strong>
+                        </div>
+                        <div class="mb-3">
+                            <label for="coupon" class="form-label">Coupon Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="coupon" placeholder="Enter coupon">
+                                <button class="btn btn-outline-secondary" type="button">Apply</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Pawsome Pets</h5>
+                    <p>Your one-stop shop for all your pet needs.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <address>
+                        Masipit, Calapan City<br>
+                        Phone: (123) 456-7890<br>
+                        Email: info@pawsomepets.com
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 Pawsome Pets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
